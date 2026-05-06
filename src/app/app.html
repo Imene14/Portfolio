@@ -1,0 +1,27 @@
+<div class="layout">
+  <app-header [activeSection]="activeSection"></app-header>
+
+  <main class="content">
+
+    <app-intro  style="height: 100vh;"
+      (startClicked)="showMainContent()"
+    >
+    </app-intro>
+
+    <div *ngIf="showContent" id="pf-content">
+      <app-skills id="about"></app-skills>
+      <div class="triangle-divider-right"></div>
+      <app-project id="projects" style="display: flex; justify-content: center;"></app-project>
+      <div class="triangle-divider-left"></div>
+      <app-formation id="education"></app-formation>
+      <app-contact style="margin: 50px 0;"></app-contact>
+      <section class="curved-section"></section>
+      <hr style="color: #979799;">
+      <hr style="color: #979799; margin-top: 5px;">
+      <app-footer></app-footer>
+    </div>
+
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

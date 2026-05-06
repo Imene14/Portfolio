@@ -1,0 +1,47 @@
+
+<div class="main1">
+    <h1>Skills Map</h1>
+   <!-- <hr style="margin-top: 490px;"> -->
+   <!-- src/app/skills-tree/skills-tree.component.html -->
+   <!-- src/app/skills-tree/skills-tree.component.html -->
+<div class="skills-wrapper">
+  <!-- <h3 class="title">Skills Tree</h3> -->
+
+  <svg #linesSvg class="lines"></svg> <!-- 👈 SVG for curved lines -->
+
+  <mat-tree
+    [dataSource]="data"
+    [childrenAccessor]="childrenAccessor"
+    class="mat-tree"
+    style="background-color: transparent;"
+  >
+    <!-- Node with no children (leaf) -->
+    <mat-tree-node *matTreeNodeDef="let node">
+      <li class="leaf" [attr.data-node]="node.name">
+        <span class="dot">•</span>
+        <span class="node-name">{{ node.name }}</span>
+      </li>
+    </mat-tree-node>
+
+    <!-- Node with children -->
+    <mat-nested-tree-node
+      style="background-color: transparent;"
+      *matTreeNodeDef="let node; when: hasChild"
+    >
+      <li class="parent" [attr.data-node]="node.name">
+        <div class="node-header" matTreeNodeToggle>
+          <span class="node-name">{{ node.name }}</span>
+        </div>
+
+        <ul class="children" [ngClass]="{ 'leaf-children': isLeafLevel(node) }">
+          <ng-container matTreeNodeOutlet></ng-container>
+        </ul>
+      </li>
+    </mat-nested-tree-node>
+  </mat-tree>
+</div>
+
+
+
+
+</div>

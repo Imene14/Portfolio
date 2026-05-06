@@ -1,0 +1,39 @@
+<div class="project-main">
+  <h1>My Projects</h1>
+
+  <div class="projects-container">
+
+    <div *ngFor="let item of data; let i = index"
+         class="project-div"
+         [class.reverse]="i % 2 !== 0"
+         [ngClass]="i % 2 === 0 ? 'left-layout' : 'right-layout'">
+
+      <div class="cir"></div>
+
+      <!-- LEFT / RIGHT CARD -->
+      <div class="project-card">
+        <h4>{{item.name}}</h4>
+        <p>{{item.description}}</p> <br>
+        <p><strong>Keywords:</strong> {{item.keywords}}</p>
+      </div>
+
+      <!-- META -->
+      <div class="project-meta">
+        <p class="date">{{item.date}}</p>
+
+        <div class="tech-container">
+          <!-- <span class="tech-title">Technologies:</span> -->
+
+          <div class="tech-list">
+            <div *ngFor="let tech of item.technologies" class="tech-item">
+              <img [src]="tech.icon" [alt]="tech.name">
+              <span>{{ tech.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="skills">
+  <h1>About Me</h1>
+
+  <div class="skill-div">
+    <div class="skill-proj">
+      <img src="puzzle.png" class="skill-image">
+    </div>
+
+    <div class="skill-wrapper" #container>
+      <svg id="connection-lines" class="connection-svg"></svg>
+
+      <div class="skill-list">
+        @for(item of data; track data) {
+          <div class="skill-item">
+            
+            <div class="circle-holder">
+              <div class="circle" id="circle"></div>
+            </div>
+
+            <div class="skill-text">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}</p>
+            </div>
+
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

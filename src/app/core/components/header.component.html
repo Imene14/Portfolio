@@ -1,0 +1,13 @@
+<div class="nav-bar" [class.nav-hidden]="!showNavbar">
+    <h3 class="logo"><i class="fa-solid fa-star-of-life"></i>Imen</h3>
+    <ul>
+      <li [class.active]="activeSection === 'about'">About</li>
+      <li [class.active]="activeSection === 'projects'">Projects</li>
+      <li [class.active]="activeSection === 'education'">Education</li>
+    </ul>
+    <button class="contact">
+      <span class="text">Contact</span>
+      <i class="icon fa fa-paper-plane"></i>
+    </button>
+
+</div>
